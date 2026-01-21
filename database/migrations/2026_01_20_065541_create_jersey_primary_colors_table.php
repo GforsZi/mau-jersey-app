@@ -12,9 +12,10 @@ return new class extends Migration {
     {
         Schema::create('jersey_primary_colors', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('color_name');
             $table->string('code_color');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

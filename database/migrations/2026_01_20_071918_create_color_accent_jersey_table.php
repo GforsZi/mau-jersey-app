@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('jersey_id');
             $table->unsignedBigInteger('color_accent_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('jersey_id')->references('id')->on('jerseys')->onDelete('cascade');
             $table->foreign('color_accent_id')->references('id')->on('jersey_color_accents')->onDelete('cascade');
         });

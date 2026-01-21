@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string('image');
             $table->unsignedBigInteger('jersey_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('jersey_id')->references('id')->on('jerseys')->onDelete('cascade');
         });
     }

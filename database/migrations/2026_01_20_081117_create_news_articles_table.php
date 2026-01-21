@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->text('content');
             $table->string('image_thumbnail')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

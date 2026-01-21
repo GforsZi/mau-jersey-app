@@ -21,6 +21,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('primary_color_id');
             $table->unsignedBigInteger('primary_material_id');
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('primary_color_id')->references('id')->on('jersey_primary_colors')->onDelete('cascade');
             $table->foreign('primary_material_id')->references('id')->on('jersey_materials')->onDelete('cascade');
         });

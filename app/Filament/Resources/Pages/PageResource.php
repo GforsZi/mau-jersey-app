@@ -13,12 +13,15 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PageResource extends Resource
 {
     protected static ?string $model = Page::class;
+    protected static ?string $navigationLabel = 'Halaman Web';
+    protected static string|UnitEnum|null $navigationGroup = 'Pengaturan Aplikasi';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::ArrowPath;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Window;
 
     public static function form(Schema $schema): Schema
     {
@@ -33,8 +36,8 @@ class PageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
-        ];
+                //
+            ];
     }
 
     public static function getPages(): array
