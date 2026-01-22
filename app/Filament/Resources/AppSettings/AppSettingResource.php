@@ -20,6 +20,7 @@ class AppSettingResource extends Resource
     protected static ?string $model = AppSetting::class;
     protected static ?string $navigationLabel = 'Pengaturan';
     protected static string|UnitEnum|null $navigationGroup = 'Pengaturan Aplikasi';
+    protected static ?int $navigationSort = 5;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Cog6Tooth;
 

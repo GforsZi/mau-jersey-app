@@ -5,7 +5,9 @@ namespace App\Filament\Resources\NewsArticles;
 use App\Filament\Resources\NewsArticles\Pages\CreateNewsArticle;
 use App\Filament\Resources\NewsArticles\Pages\EditNewsArticle;
 use App\Filament\Resources\NewsArticles\Pages\ListNewsArticles;
+use App\Filament\Resources\NewsArticles\Pages\ViewNewsArticle;
 use App\Filament\Resources\NewsArticles\Schemas\NewsArticleForm;
+use App\Filament\Resources\NewsArticles\Schemas\NewsArticleInfolist;
 use App\Filament\Resources\NewsArticles\Tables\NewsArticlesTable;
 use App\Models\NewsArticle;
 use BackedEnum;
@@ -20,14 +22,20 @@ use UnitEnum;
 class NewsArticleResource extends Resource
 {
     protected static ?string $model = NewsArticle::class;
-    protected static ?string $navigationLabel = 'Artikel Berita';
-    protected static string|UnitEnum|null $navigationGroup = 'Pengaturan Aplikasi';
+    protected static ?string $navigationLabel = 'Artikel';
+    protected static string|UnitEnum|null $navigationGroup = 'Kelola Berita';
+    protected static ?int $navigationSort = 6;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Bars3BottomLeft;
 
     public static function form(Schema $schema): Schema
     {
         return NewsArticleForm::configure($schema);
+    }
+
+    public static function infolist(Schema $schema): Schema
+    {
+        return NewsArticleInfolist::configure($schema);
     }
 
     public static function table(Table $table): Table
@@ -47,6 +55,7 @@ class NewsArticleResource extends Resource
         return [
             'index' => ListNewsArticles::route('/'),
             'create' => CreateNewsArticle::route('/create'),
+            'view' => ViewNewsArticle::route('/{record}'),
             'edit' => EditNewsArticle::route('/{record}/edit'),
         ];
     }

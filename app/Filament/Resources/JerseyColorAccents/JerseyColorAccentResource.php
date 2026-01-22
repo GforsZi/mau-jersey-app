@@ -20,8 +20,9 @@ use UnitEnum;
 class JerseyColorAccentResource extends Resource
 {
     protected static ?string $model = JerseyColorAccent::class;
-    protected static ?string $navigationLabel = 'Warna Aksen Jersey';
+    protected static ?string $navigationLabel = 'Warna Aksen';
     protected static string|UnitEnum|null $navigationGroup = 'Kelola Jersey';
+    protected static ?int $navigationSort = 5;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::EyeDropper;
 

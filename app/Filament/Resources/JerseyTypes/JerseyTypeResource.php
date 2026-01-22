@@ -20,9 +20,10 @@ use UnitEnum;
 class JerseyTypeResource extends Resource
 {
     protected static ?string $model = JerseyType::class;
-    protected static ?string $navigationLabel = 'Jenis Jersey';
+    protected static ?string $navigationLabel = 'Jenis';
     protected static string|UnitEnum|null $navigationGroup = 'Kelola Jersey';
     protected static string|BackedEnum|null $navigationIcon = Heroicon::Tag;
+    protected static ?int $navigationSort = 3;
 
     public static function form(Schema $schema): Schema
     {
