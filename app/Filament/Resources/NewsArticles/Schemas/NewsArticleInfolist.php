@@ -15,12 +15,12 @@ class NewsArticleInfolist
     public static function configure(Schema $schema): Schema
     {
         return $schema->components([
-            TextEntry::make('content')->html()->prose(),
             Flex::make([
                 Section::make()
                     ->heading(fn(NewsArticle $record): string => $record->title)
                     ->schema([ImageEntry::make('image_thumbnail')->hiddenLabel()->imageSize('100%'), TextEntry::make('categories.name')->label('Kategori')->badge()->color('primary')]),
             ]),
+            TextEntry::make('content')->html()->prose(),
         ]);
     }
 }
