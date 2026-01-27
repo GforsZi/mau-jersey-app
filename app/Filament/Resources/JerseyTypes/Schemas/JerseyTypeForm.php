@@ -3,18 +3,17 @@
 namespace App\Filament\Resources\JerseyTypes\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class JerseyTypeForm
 {
     public static function configure(Schema $schema): Schema
     {
-        return $schema
-            ->components([
-                TextInput::make('slug')
-                    ->required(),
-                TextInput::make('name')
-                    ->required(),
-            ]);
+        return $schema->components([
+            TextInput::make('name')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
+            TextInput::make('slug')->required()->readOnly(),
+        ]);
     }
 }

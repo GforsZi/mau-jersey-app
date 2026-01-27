@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('jerseys', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug');
             $table->string('stock_keeping_unit');
             $table->text('description');
             $table->string('minimum_order');

@@ -10,6 +10,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Split;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Flex;
 use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
@@ -23,13 +25,6 @@ class NewsArticleForm
             Flex::make([
                 Section::make([
                     TextInput::make('title')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                    TextInput::make('slug')->required(),
-                    Select::make('status')
-                        ->options([
-                            'draf' => 'draf',
-                            'publikasi' => 'publikasi',
-                        ])
-                        ->searchable(),
                     Select::make('technologies')
                         ->relationship('categories', 'name')
                         ->preload()
@@ -37,16 +32,25 @@ class NewsArticleForm
                         ->options(ArticleCategory::query()->pluck('name', 'id'))
                         ->createOptionForm([
                             TextInput::make('name')->required()->live(onBlur: true)->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                            TextInput::make('slug')->required(),
+                            TextInput::make('slug')->readOnly()->required(),
                         ]),
+                    RichEditor::make('content')->fileAttachmentsDirectory('articles/attachments')->required(),
+                ]),
+                Section::make([
                     FileUpload::make('image_thumbnail')
                         ->image()
                         ->imageEditor()
                         ->imageEditorAspectRatioOptions(['16:9', '4:3', '1:1'])
                         ->directory('/news/thumbnail'),
-                ]),
-            ]),
-            RichEditor::make('content')->fileAttachmentsDirectory('articles/attachments')->required(),
+                    TextInput::make('slug')->required()->readOnly(),
+                    Select::make('status')
+                        ->options([
+                            'draf' => 'draf',
+                            'publikasi' => 'publikasi',
+                        ])
+                        ->searchable(),
+                ])->grow(false),
+            ])->columnSpanFull(),
         ]);
     }
 }

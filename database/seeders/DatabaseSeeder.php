@@ -25,6 +25,6 @@ class DatabaseSeeder extends Seeder
             ],
         );
 
-        $this->call([JerseyMaterialSeeder::class, JerseyPrimaryColorSeeder::class, JerseyTypeSeeder::class, JerseyColorAccentSeeder::class]);
+        $this->call([JerseyMaterialSeeder::class, JerseyPrimaryColorSeeder::class, JerseyTypeSeeder::class, JerseyColorAccentSeeder::class, AppSettingSeeder::class]);
     }
 }

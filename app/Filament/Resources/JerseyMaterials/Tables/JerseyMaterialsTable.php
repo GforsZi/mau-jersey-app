@@ -17,8 +17,8 @@ class JerseyMaterialsTable
     {
         return $table
             ->columns([
-                TextColumn::make('slug')->searchable(),
                 TextColumn::make('name')->searchable(),
+                TextColumn::make('slug')->searchable(),
                 TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
