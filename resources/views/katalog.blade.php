@@ -1,136 +1,137 @@
-<!DOCTYPE html>
-<html lang="id">
+    <!DOCTYPE html>
+  <html lang="id">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MAUJERSEY — Katalog</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAUJERSEY — Katalog</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
 
-  <link rel="icon" href="assets/img/logo.png" />
+    <link rel="icon" href="assets/img/logo.png" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  <!-- Tailwind Config (CDN mode) -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ["Poppins", "sans-serif"],
-          },
-          boxShadow: {
-            glow: "0 0 30px rgba(34, 211, 238, .25)",
-            glow2: "0 0 55px rgba(34, 211, 238, .25)"
+    <!-- Tailwind Config (CDN mode) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 0 30px rgba(34, 211, 238, .25)",
+              glow2: "0 0 55px rgba(34, 211, 238, .25)"
+            }
           }
         }
       }
-    }
-  </script>
+    </script>
 
-  <style>
-    html,
-    body {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: hidden !important;
-    }
+    <style>
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+      }
 
-    /* jangan pakai max-width di semua elemen (*) */
-    * {
-      box-sizing: border-box;
-    }
+      /* jangan pakai max-width di semua elemen (*) */
+      * {
+        box-sizing: border-box;
+      }
 
-    main,
-    header,
-    footer,
-    section,
-    div {
-      max-width: 100%;
-    }
+      main,
+      header,
+      footer,
+      section,
+      div {
+        max-width: 100%;
+      }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
 
-    .glow-text {
-      text-shadow:
-        0 0 6px rgba(34, 211, 238, .55),
-        0 0 20px rgba(34, 211, 238, .35);
-    }
+      .glow-text {
+        text-shadow:
+          0 0 6px rgba(34, 211, 238, .55),
+          0 0 20px rgba(34, 211, 238, .35);
+      }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
 
-    /* Swiper bullets */
-    .swiper-pagination-bullet {
-      background: rgba(255, 255, 255, 0.35);
-      opacity: 1;
-    }
+      /* Swiper bullets */
+      .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.35);
+        opacity: 1;
+      }
 
-    .swiper-pagination-bullet-active {
-      background: rgba(34, 211, 238, 0.95);
-      box-shadow: 0 0 12px rgba(34, 211, 238, .35);
-    }
+      .swiper-pagination-bullet-active {
+        background: rgba(34, 211, 238, 0.95);
+        box-shadow: 0 0 12px rgba(34, 211, 238, .35);
+      }
 
-    .hero-bg-swiper .swiper-slide img {
-      transform: scale(1.06);
-      filter: blur(1px);
-    }
+      .hero-bg-swiper .swiper-slide img {
+        transform: scale(1.06);
+        filter: blur(1px);
+      }
 
-    /* ✅ IMPORTANT: SWIPER jangan bikin overflow */
-    .swiper,
-    .swiper-wrapper,
-    .swiper-slide {
-      max-width: 100% !important;
-      overflow: hidden !important;
-    }
+      /* ✅ IMPORTANT: SWIPER jangan bikin overflow */
+      .swiper,
+      .swiper-wrapper,
+      .swiper-slide {
+        max-width: 100% !important;
+        overflow: hidden !important;
+      }
 
-    /* ✅ Pastikan card tidak pernah melebar */
-    .product-card {
-      width: 100% !important;
-      min-width: 0 !important;
-    }
-  </style>
-</head>
+      /* ✅ Pastikan card tidak pernah melebar */
+      .product-card {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+    </style>
+  </head>
 
-<body class="font-display bg-slate-950 text-white overflow-x-hidden">
+  <body class="font-display bg-slate-950 text-white overflow-x-hidden">
 
-  <!-- BG Glow Effects -->
-  <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-    <div class="absolute -top-48 left-1/2 h-[360px] w-[360px] md:h-[460px] md:w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-3xl">
+    <!-- BG Glow Effects -->
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-48 left-1/2 h-[360px] w-[360px] md:h-[460px] md:w-[460px] -translate-x-1/2 rounded-full bg-cyan-500/20 blur-3xl">
+      </div>
+
+      <div class="absolute top-28 right-[-80px] md:right-[-140px] h-[300px] w-[300px] md:h-[420px] md:w-[420px] rounded-full bg-blue-500/10 blur-3xl">
+      </div>
+
+      <div class="absolute bottom-[-160px] left-[-80px] md:bottom-[-220px] md:left-[-160px] h-[340px] w-[340px] md:h-[520px] md:w-[520px] rounded-full bg-indigo-500/10 blur-3xl">
+      </div>
     </div>
 
-    <div class="absolute top-28 right-[-80px] md:right-[-140px] h-[300px] w-[300px] md:h-[420px] md:w-[420px] rounded-full bg-blue-500/10 blur-3xl">
-    </div>
-
-    <div class="absolute bottom-[-160px] left-[-80px] md:bottom-[-220px] md:left-[-160px] h-[340px] w-[340px] md:h-[520px] md:w-[520px] rounded-full bg-indigo-500/10 blur-3xl">
-    </div>
-  </div>
-
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/60 backdrop-blur-xl">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 border-b border-white/5 bg-slate-950/60 backdrop-blur-xl">
     <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
 
       <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-3 min-w-0">
-        <div class="h-10 w-10 shrink-0 rounded-2xl border border-cyan-300/30 bg-cyan-300/10 shadow-glow flex items-center justify-center overflow-hidden">
-          <img src="assets/img/logo.png" alt="MAUJERSEY Logo" class="h-9 w-9 object-contain" />
+      <a href="{{ route('home') }}" class="flex items-center gap-3 min-w-0">
+        <div
+          class="h-10 w-10 shrink-0 rounded-2xl border border-cyan-300/30 bg-cyan-300/10 shadow-glow flex items-center justify-center overflow-hidden">
+          <img src="{{ asset('img/logo.png') }}" alt="MAUJERSEY Logo" class="h-9 w-9 object-contain" />
         </div>
         <div class="leading-tight min-w-0">
           <p class="text-lg font-extrabold tracking-tight whitespace-nowrap">MAUJERSEY</p>
@@ -140,15 +141,35 @@
 
       <!-- Desktop menu -->
       <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-        <a href="index.html" class="hover:text-cyan-200 transition">Home</a>
-        <a href="katalog.html" class="text-cyan-200 font-semibold">Katalog</a>
-        <a href="berita.html" class="hover:text-cyan-200 transition">Berita</a>
-        <a href="contact.html" class="hover:text-cyan-200 transition">Contact</a>
+
+        <a href="{{ route('home') }}"
+          class="hover:text-cyan-200 transition
+          {{ request()->routeIs('home') ? 'text-cyan-200 font-semibold' : '' }}">
+          Home
+        </a>
+
+        <a href="{{ route('katalog') }}"
+          class="hover:text-cyan-200 transition
+          {{ request()->routeIs('katalog*') ? 'text-cyan-200 font-semibold' : '' }}">
+          Katalog
+        </a>
+
+        <a href="{{ route('berita') }}"
+          class="hover:text-cyan-200 transition
+          {{ request()->routeIs('berita*') ? 'text-cyan-200 font-semibold' : '' }}">
+          Berita
+        </a>
+
+        <a href="{{ route('contact') }}"
+          class="hover:text-cyan-200 transition
+          {{ request()->routeIs('contact') ? 'text-cyan-200 font-semibold' : '' }}">
+          Contact
+        </a>
       </nav>
 
       <!-- CTA -->
       <div class="hidden md:flex gap-3">
-        <a href="admin/login.html"
+        <a href="#"
           class="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition shadow-glow">
           Masuk
         </a>
@@ -167,12 +188,28 @@
     <!-- Mobile menu -->
     <div id="mobileMenu" class="md:hidden hidden border-t border-white/5 bg-slate-950/90 backdrop-blur-xl">
       <div class="mx-auto max-w-6xl px-4 py-4 flex flex-col gap-3 text-sm text-slate-300">
-        <a href="index.html" class="hover:text-cyan-200 transition">Home</a>
-        <a href="katalog.html" class="text-cyan-200 font-semibold">Katalog</a>
-        <a href="berita.html" class="hover:text-cyan-200 transition">Berita</a>
-        <a href="contact.html" class="hover:text-cyan-200 transition">Contact</a>
 
-        <a href="admin/login.html"
+        <a href="{{ route('home') }}"
+          class="{{ request()->routeIs('home') ? 'text-cyan-200 font-semibold' : '' }}">
+          Home
+        </a>
+
+        <a href="{{ route('katalog') }}"
+          class="{{ request()->routeIs('katalog*') ? 'text-cyan-200 font-semibold' : '' }}">
+          Katalog
+        </a>
+
+        <a href="{{ route('berita') }}"
+          class="{{ request()->routeIs('berita*') ? 'text-cyan-200 font-semibold' : '' }}">
+          Berita
+        </a>
+
+        <a href="{{ route('contact') }}"
+          class="{{ request()->routeIs('contact') ? 'text-cyan-200 font-semibold' : '' }}">
+          Contact
+        </a>
+
+        <a href="#"
           class="mt-2 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition shadow-glow">
           Masuk
         </a>
@@ -180,360 +217,360 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="mx-auto max-w-6xl px-4">
+    <!-- MAIN -->
+    <main class="mx-auto max-w-6xl px-4">
 
-    <!-- HERO -->
-    <section class="relative isolate mt-6 md:mt-8 overflow-hidden rounded-[28px] md:rounded-[36px] border border-white/10">
+      <!-- HERO -->
+      <section class="relative isolate mt-6 md:mt-8 overflow-hidden rounded-[28px] md:rounded-[36px] border border-white/10">
 
-      <!-- HERO BG -->
-      <div class="absolute inset-0 -z-10 overflow-hidden">
-        <div class="swiper heroSwiper hero-bg-swiper h-full w-full">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-full w-full object-cover" alt="bg 1"></div>
-            <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-full w-full object-cover" alt="bg 2"></div>
-            <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-full w-full object-cover" alt="bg 3"></div>
-            <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-full w-full object-cover" alt="bg 4"></div>
-            <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-full w-full object-cover" alt="bg 5"></div>
-            <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-full w-full object-cover" alt="bg 6"></div>
-          </div>
-        </div>
-
-        <div class="absolute inset-0 z-10 bg-slate-500/90"></div>
-        <div class="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/85"></div>
-      </div>
-
-      <!-- hero content -->
-      <div class="px-5 sm:px-6 md:px-10 py-12 md:py-16">
-        <div class="max-w-3xl">
-
-          <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight glow-text">
-            Katalog <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">MAUJERSEY</span>
-          </h1>
-
-          <p class="mt-4 text-slate-200/90 leading-relaxed">
-            Jelajahi katalog produk MAUJERSEY untuk berbagai kebutuhan jersey olahraga—futsal, basket, hingga esports.
-            Semua produk bisa custom desain, nama & nomor, dengan pilihan bahan berkualitas dan hasil produksi rapi.
-          </p>
-
-          <!-- FILTER TAGS -->
-          <div class="mt-8 flex flex-wrap gap-3">
-            <button data-filter="all"
-              class="filter-btn rounded-full px-4 py-2 text-sm font-semibold border border-cyan-300/40 bg-cyan-300/10 text-cyan-200 hover:bg-cyan-300/15 transition">
-              All
-            </button>
-
-            <button data-filter="futsal"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Futsal
-            </button>
-
-            <button data-filter="basket"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Basket
-            </button>
-
-            <button data-filter="esport"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Esport
-            </button>
-
-            <button data-filter="paket"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Paket
-            </button>
-
-            <button data-filter="sepeda"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Sepeda
-            </button>
-
-            <button data-filter="badminton"
-              class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
-              Badminton
-            </button>
+        <!-- HERO BG -->
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <div class="swiper heroSwiper hero-bg-swiper h-full w-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-full w-full object-cover" alt="bg 1"></div>
+              <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-full w-full object-cover" alt="bg 2"></div>
+              <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-full w-full object-cover" alt="bg 3"></div>
+              <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-full w-full object-cover" alt="bg 4"></div>
+              <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-full w-full object-cover" alt="bg 5"></div>
+              <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-full w-full object-cover" alt="bg 6"></div>
+            </div>
           </div>
 
+          <div class="absolute inset-0 z-10 bg-slate-500/90"></div>
+          <div class="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/85"></div>
         </div>
-      </div>
-    </section>
 
-    <!-- KATALOG GRID -->
-    <section class="pb-16 mt-10">
-      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- hero content -->
+        <div class="px-5 sm:px-6 md:px-10 py-12 md:py-16">
+          <div class="max-w-3xl">
 
-        <!-- CARD 1 (LINK) -->
-        <a href="katalog-details.html" data-category="futsal"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition block">
+            <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight glow-text">
+              Katalog <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">MAUJERSEY</span>
+            </h1>
 
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
+            <p class="mt-4 text-slate-200/90 leading-relaxed">
+              Jelajahi katalog produk MAUJERSEY untuk berbagai kebutuhan jersey olahraga—futsal, basket, hingga esports.
+              Semua produk bisa custom desain, nama & nomor, dengan pilihan bahan berkualitas dan hasil produksi rapi.
+            </p>
+
+            <!-- FILTER TAGS -->
+            <div class="mt-8 flex flex-wrap gap-3">
+              <button data-filter="all"
+                class="filter-btn rounded-full px-4 py-2 text-sm font-semibold border border-cyan-300/40 bg-cyan-300/10 text-cyan-200 hover:bg-cyan-300/15 transition">
+                All
+              </button>
+
+              <button data-filter="futsal"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Futsal
+              </button>
+
+              <button data-filter="basket"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Basket
+              </button>
+
+              <button data-filter="esport"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Esport
+              </button>
+
+              <button data-filter="paket"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Paket
+              </button>
+
+              <button data-filter="sepeda"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Sepeda
+              </button>
+
+              <button data-filter="badminton"
+                class="filter-btn rounded-full px-4 py-2 text-sm border border-white/10 bg-white/5 text-slate-200 hover:border-cyan-300/30 hover:bg-cyan-300/10 transition">
+                Badminton
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- KATALOG GRID -->
+      <section class="pb-16 mt-10">
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- CARD 1 (LINK) -->
+          <a href="katalog-details.html" data-category="futsal"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition block">
+
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk1.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
               </div>
-              <div class="swiper-pagination"></div>
+
+              <div
+                class="absolute top-3 left-3 text-[11px] font-semibold px-3 py-1 rounded-full bg-cyan-300/15 border border-cyan-300/30 text-cyan-200">
+                Best Seller
+              </div>
             </div>
 
-            <div
-              class="absolute top-3 left-3 text-[11px] font-semibold px-3 py-1 rounded-full bg-cyan-300/15 border border-cyan-300/30 text-cyan-200">
-              Best Seller
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Futsal Custom</h3>
+            <p class="mt-2 text-sm text-slate-300">Full print sublim, adem & nyaman untuk indoor match.</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 120.000</p>
+              <span class="text-xs text-slate-400 group-hover:text-cyan-200 transition">Lihat Detail →</span>
+            </div>
+          </a>
+
+          <!-- CARD 2 -->
+          <div data-category="basket"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Basket Custom</h3>
+            <p class="mt-2 text-sm text-slate-300">Breathable, cutting basket, bisa 1 set (atas + bawah).</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 150.000</p>
+              <span class="text-xs text-slate-400">Preview</span>
             </div>
           </div>
 
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Futsal Custom</h3>
-          <p class="mt-2 text-sm text-slate-300">Full print sublim, adem & nyaman untuk indoor match.</p>
+          <!-- CARD 3 -->
+          <div data-category="esport"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
 
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 120.000</p>
-            <span class="text-xs text-slate-400 group-hover:text-cyan-200 transition">Lihat Detail →</span>
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Esport Premium</h3>
+            <p class="mt-2 text-sm text-slate-300">Desain eksklusif, identitas tim makin solid & profesional.</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 170.000</p>
+              <span class="text-xs text-slate-400">Preview</span>
+            </div>
           </div>
+
+          <!-- CARD 4 -->
+          <div data-category="paket"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Paket Jersey 1 Tim</h3>
+            <p class="mt-2 text-sm text-slate-300">Lebih hemat untuk tim + bonus custom nama & nomor.</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 110.000</p>
+              <span class="text-xs text-slate-400">Preview</span>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div data-category="sepeda"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Sepeda</h3>
+            <p class="mt-2 text-sm text-slate-300">Nyaman untuk gowes, ringan dan cepat menyerap keringat.</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 140.000</p>
+              <span class="text-xs text-slate-400">Preview</span>
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div data-category="badminton"
+            class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
+            <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <div class="swiper productSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
+                  <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Badminton</h3>
+            <p class="mt-2 text-sm text-slate-300">Ringan, fleksibel, nyaman untuk rally cepat & pertandingan.</p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-extrabold text-cyan-200">Rp 130.000</p>
+              <span class="text-xs text-slate-400">Preview</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CTA bawah -->
+        <div class="mt-10 flex justify-center">
+          <a href="contact.html"
+            class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition shadow-glow">
+            Konsultasi & Order Sekarang
+          </a>
+        </div>
+      </section>
+    </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5">
+    <div
+      class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+
+      <p class="text-sm text-slate-400">
+        © <span class="text-white font-semibold">MAUJERSEY</span>. All Rights Reserved.
+      </p>
+
+      <!-- SOCIAL -->
+      <div class="flex items-center gap-3">
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@username" target="_blank" rel="noopener"
+          class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
+          <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.5 6.06c-1.36-.87-2.25-2.34-2.34-4.06h-3.1v14.2a2.6 2.6 0 1 1-2.23-2.58v-3.2a5.8 5.8 0 1 0 5.33 5.78V9.18c1.2.86 2.67 1.37 4.34 1.37V7.5c-.75 0-1.46-.15-2.01-.44z" />
+          </svg>
         </a>
 
-        <!-- CARD 2 -->
-        <div data-category="basket"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk2.png" class="h-44 w-full object-cover" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
+        <!-- Instagram -->
+        <a href="https://instagram.com/username" target="_blank" rel="noopener"
+          class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
+          <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+            <path d="M16 11.37a4 4 0 1 1-7.75 1.2 4 4 0 0 1 7.75-1.2z"></path>
+            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+          </svg>
+        </a>
 
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Basket Custom</h3>
-          <p class="mt-2 text-sm text-slate-300">Breathable, cutting basket, bisa 1 set (atas + bawah).</p>
-
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 150.000</p>
-            <span class="text-xs text-slate-400">Preview</span>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div data-category="esport"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk3.png" class="h-44 w-full object-cover" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Esport Premium</h3>
-          <p class="mt-2 text-sm text-slate-300">Desain eksklusif, identitas tim makin solid & profesional.</p>
-
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 170.000</p>
-            <span class="text-xs text-slate-400">Preview</span>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div data-category="paket"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk4.png" class="h-44 w-full object-cover" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Paket Jersey 1 Tim</h3>
-          <p class="mt-2 text-sm text-slate-300">Lebih hemat untuk tim + bonus custom nama & nomor.</p>
-
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 110.000</p>
-            <span class="text-xs text-slate-400">Preview</span>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div data-category="sepeda"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk5.png" class="h-44 w-full object-cover" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Sepeda</h3>
-          <p class="mt-2 text-sm text-slate-300">Nyaman untuk gowes, ringan dan cepat menyerap keringat.</p>
-
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 140.000</p>
-            <span class="text-xs text-slate-400">Preview</span>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div data-category="badminton"
-          class="product-card group glass rounded-3xl p-6 hover:border-cyan-300/30 hover:bg-cyan-300/5 transition">
-          <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
-                <div class="swiper-slide"><img src="assets/img/Produk6.png" class="h-44 w-full object-cover" alt=""></div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
-
-          <h3 class="mt-5 text-xl font-extrabold group-hover:text-cyan-200 transition">Jersey Badminton</h3>
-          <p class="mt-2 text-sm text-slate-300">Ringan, fleksibel, nyaman untuk rally cepat & pertandingan.</p>
-
-          <div class="mt-4 flex items-center justify-between">
-            <p class="text-lg font-extrabold text-cyan-200">Rp 130.000</p>
-            <span class="text-xs text-slate-400">Preview</span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CTA bawah -->
-      <div class="mt-10 flex justify-center">
-        <a href="contact.html"
-          class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold text-slate-950 bg-cyan-300 hover:bg-cyan-200 transition shadow-glow">
-          Konsultasi & Order Sekarang
+        <!-- Facebook -->
+        <a href="https://facebook.com/username" target="_blank" rel="noopener"
+          class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
+          <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5v1.9H17l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z" />
+          </svg>
         </a>
       </div>
-    </section>
-  </main>
 
-<!-- FOOTER -->
-<footer class="border-t border-white/5">
-  <div
-    class="mx-auto max-w-6xl px-4 py-10 flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
-
-    <p class="text-sm text-slate-400">
-      © <span class="text-white font-semibold">MAUJERSEY</span>. All Rights Reserved.
-    </p>
-
-    <!-- SOCIAL -->
-    <div class="flex items-center gap-3">
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@username" target="_blank" rel="noopener"
-        class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
-        <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M17.5 6.06c-1.36-.87-2.25-2.34-2.34-4.06h-3.1v14.2a2.6 2.6 0 1 1-2.23-2.58v-3.2a5.8 5.8 0 1 0 5.33 5.78V9.18c1.2.86 2.67 1.37 4.34 1.37V7.5c-.75 0-1.46-.15-2.01-.44z" />
-        </svg>
-      </a>
-
-      <!-- Instagram -->
-      <a href="https://instagram.com/username" target="_blank" rel="noopener"
-        class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
-        <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
-          <path d="M16 11.37a4 4 0 1 1-7.75 1.2 4 4 0 0 1 7.75-1.2z"></path>
-          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-        </svg>
-      </a>
-
-      <!-- Facebook -->
-      <a href="https://facebook.com/username" target="_blank" rel="noopener"
-        class="group inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/10 bg-white/5 hover:bg-cyan-300/10 hover:border-cyan-300/30 transition">
-        <svg class="h-5 w-5 text-slate-200 group-hover:text-cyan-200 transition" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5v1.9H17l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z" />
-        </svg>
-      </a>
     </div>
+  </footer>
 
-  </div>
-</footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Mobile Menu
+      const btnMobile = document.getElementById("btnMobile");
+      const mobileMenu = document.getElementById("mobileMenu");
+      btnMobile.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
 
-  <script>
-    // Mobile Menu
-    const btnMobile = document.getElementById("btnMobile");
-    const mobileMenu = document.getElementById("mobileMenu");
-    btnMobile.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // HERO background swiper
-    new Swiper(".heroSwiper", {
-      loop: true,
-      effect: "fade",
-      speed: 1200,
-      autoplay: {
-        delay: 2800,
-        disableOnInteraction: false,
-      },
-    });
-
-    // Swiper for each product card
-    document.querySelectorAll(".productSwiper").forEach((el) => {
-      new Swiper(el, {
+      // HERO background swiper
+      new Swiper(".heroSwiper", {
         loop: true,
-        spaceBetween: 10,
+        effect: "fade",
+        speed: 1200,
         autoplay: {
-          delay: 2500,
+          delay: 2800,
           disableOnInteraction: false,
         },
-        pagination: {
-          el: el.querySelector(".swiper-pagination"),
-          clickable: true,
-        },
-      });
-    });
-  </script>
-
-  <!-- FILTER SCRIPT -->
-  <script>
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".product-card");
-
-    function setActive(btn) {
-      filterButtons.forEach(b => {
-        b.classList.remove("border-cyan-300/40", "bg-cyan-300/10", "text-cyan-200", "font-semibold");
-        b.classList.add("border-white/10", "bg-white/5", "text-slate-200");
       });
 
-      btn.classList.remove("border-white/10", "bg-white/5", "text-slate-200");
-      btn.classList.add("border-cyan-300/40", "bg-cyan-300/10", "text-cyan-200", "font-semibold");
-    }
-
-    filterButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const filter = btn.getAttribute("data-filter");
-        setActive(btn);
-
-        cards.forEach((card) => {
-          const category = card.getAttribute("data-category");
-
-          if (filter === "all" || filter === category) {
-            card.classList.remove("hidden");
-          } else {
-            card.classList.add("hidden");
-          }
+      // Swiper for each product card
+      document.querySelectorAll(".productSwiper").forEach((el) => {
+        new Swiper(el, {
+          loop: true,
+          spaceBetween: 10,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: el.querySelector(".swiper-pagination"),
+            clickable: true,
+          },
         });
       });
-    });
-  </script>
+    </script>
 
-</body>
+    <!-- FILTER SCRIPT -->
+    <script>
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".product-card");
 
-</html>
+      function setActive(btn) {
+        filterButtons.forEach(b => {
+          b.classList.remove("border-cyan-300/40", "bg-cyan-300/10", "text-cyan-200", "font-semibold");
+          b.classList.add("border-white/10", "bg-white/5", "text-slate-200");
+        });
+
+        btn.classList.remove("border-white/10", "bg-white/5", "text-slate-200");
+        btn.classList.add("border-cyan-300/40", "bg-cyan-300/10", "text-cyan-200", "font-semibold");
+      }
+
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const filter = btn.getAttribute("data-filter");
+          setActive(btn);
+
+          cards.forEach((card) => {
+            const category = card.getAttribute("data-category");
+
+            if (filter === "all" || filter === category) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
+
+  </html>
